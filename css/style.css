@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #00D3DE;
+    --secondary-color: #F699C6;
+    --third-color: #8632CE;
+    --background-color: #e9eb73;
+    --basic-black: #000000;
+    --basic-white: #FFFFFF;
+
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../static/img/background1.jpg);
+    overflow:scroll;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+header {
+    height: 25vh;
+}
+
+main {
+    height: 70vh;
+}
+
+footer{
+    background-color: #8632CE;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo a img {
+    max-height: 20vh;
+}
+
+/*Estilo de container*/
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    z-index: 1;
+}
+
+.container a{
+    display: flex;
+    text-decoration: none;
+    color: var(--basic-white);
+    font-size: 1.8rem;
+    font-family: "Indie Flower", cursive;
+    font-weight: 650;
+    font-style: normal;
+    letter-spacing: 0.3rem;
+}
+
+/* CONTENEDORES DE BOTONES */
+.semipermanente,
+.kapping,
+.esculpidas,
+.quien_soy {
+     display: flex;
+    justify-content: center;
+    align-items: center ;
+    border-radius: 30px;
+    padding:  1rem;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: inset 0 0 0 2000px rgba(84, 84, 84, 0.3);
+}
+
+/* IMAGENES DE FONDO */
+.semipermanente{
+    background-image: url(../static/img/semipermanente_menu.jpeg);
+    background-position: 40%;
+    background-size: cover;
+}
+.kapping {
+    background-image: url(../static/img/kapping_menu.jpeg);
+    background-position: 40%;
+    background-size: cover;
+}
+
+.esculpidas {
+    background-image: url(../static/img/esculpidas_menu.jpeg);
+    background-position: 59%;
+    background-size: cover;
+}
+
+.quien_soy {
+    background-image: url(../static/img/quien_soy.jpeg);
+    background-position: 40%;
+    background-size: cover;
+}
+
+/* ARREGLO DE CENTRADO EN QUIEN_SOY */
+
+.quien_soy  a{
+    margin-left: 1.5rem;
+}
