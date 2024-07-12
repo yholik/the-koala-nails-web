@@ -2,36 +2,32 @@
     --primary-color: #00D3DE;
     --secondary-color: #F699C6;
     --third-color: #8632CE;
+    --thir-color-wshadow: #3f175fb2;
     --background-color: #e9eb73;
     --basic-black: #000000;
     --basic-white: #FFFFFF;
-
+    --font-general: "Indie Flower";
+    --font-descriptions: "Quicksand", sans-serif;
 }
 
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-image: url(../static/img/background1.jpg);
-    overflow:scroll;
+    background-image: url(../static/img/background_index.jpeg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(35, 11, 58, 0.356);
+    overflow: scroll;
     overflow-x: hidden;
-    height: 100vh;
 }
 
 header {
     height: 25vh;
 }
-
-main {
-    height: 70vh;
-}
-
-footer{
-    background-color: #8632CE;
-}
-
 
 .logo {
     display: flex;
@@ -57,12 +53,13 @@ footer{
     z-index: 1;
 }
 
-.container a{
+.container a {
     display: flex;
     text-decoration: none;
+    text-shadow: 3px 2px 1px rgba(0, 0, 0, 0.8);
     color: var(--basic-white);
     font-size: 1.8rem;
-    font-family: "Indie Flower", cursive;
+    font-family: var(--font-general);
     font-weight: 650;
     font-style: normal;
     letter-spacing: 0.3rem;
@@ -73,24 +70,25 @@ footer{
 .kapping,
 .esculpidas,
 .quien_soy {
-     display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     border-radius: 30px;
-    padding:  1rem;
+    padding: 1rem;
     margin-top: 3px;
     margin-bottom: 3px;
     width: 10rem;
     height: 10rem;
-    box-shadow: inset 0 0 0 2000px rgba(84, 84, 84, 0.3);
+    box-shadow: inset 0 0 0 2000px rgba(35, 11, 58, 0.356);
 }
 
 /* IMAGENES DE FONDO */
-.semipermanente{
+.semipermanente {
     background-image: url(../static/img/semipermanente_menu.jpeg);
     background-position: 40%;
     background-size: cover;
 }
+
 .kapping {
     background-image: url(../static/img/kapping_menu.jpeg);
     background-position: 40%;
@@ -98,8 +96,8 @@ footer{
 }
 
 .esculpidas {
-    background-image: url(../static/img/esculpidas_menu.jpeg);
-    background-position: 59%;
+    background-image: url(../static/img/esculpidas_menu.jpg);
+    background-position: 59% 100%;
     background-size: cover;
 }
 
@@ -109,8 +107,207 @@ footer{
     background-size: cover;
 }
 
-/* ARREGLO DE CENTRADO EN QUIEN_SOY */
+/*MEDIA QUERIES*/
 
-.quien_soy  a{
-    margin-left: 1.5rem;
+/* SMARTPHONES X-SMALL*/
+@media only screen and (max-width: 400px) {
+    .logo a img {
+        max-height: 16vh;
+    }
+
+    .semipermanente,
+    .kapping,
+    .esculpidas,
+    .quien_soy {
+        height: 5rem;
+    }
+
+}
+
+/* SMARTPHONES SMALL */
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+
+    body {
+        background-size: cover;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .logo a img {
+        max-height: 20vh;
+    }
+
+    .semipermanente,
+    .kapping,
+    .esculpidas,
+    .quien_soy {
+        margin-top: 4px;
+        height: 7rem;
+    }
+
+}
+
+/* SMARTPHONES MEDIUM */
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .semipermanente,
+    .kapping,
+    .esculpidas,
+    .quien_soy {
+        margin-top: 4px;
+        height: 9rem;
+    }
+}
+
+/* ESTILO DE PÁGINA ESMALTADO */
+
+/*POSICIONAMIENTO DE LOS ELEMENTOS*/
+
+header {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 1;
+}
+
+.main_esmaltado {
+    display: grid;
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-template-rows: 10vh 50vh 40vh;
+    color: var(--basic-white);
+    font-family: var(--font-descriptions);
+}
+
+.logo_esmaltado {
+    margin-top: 15px;
+}
+
+/*--------- CONTENEDORES ---------------*/
+
+.container_esmaltado {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20vh 10vh 20vh 50vh;
+}
+
+.nav_esmaltado ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav_esmaltado ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--basic-white);
+    font-size: 14px;
+}
+
+.nav_esmaltado ul li {
+    display: flex;
+    list-style: none;
+    background-color: var(--thir-color-wshadow);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+}
+
+.nav_menu {
+    display: flex;
+    margin-top: 25px;
+    height: 2.2rem;
+    justify-content: center;
+}
+
+.titulo {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 1;
+}
+
+.titulo h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.description {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 2;
+}
+
+.description h2 {
+    font-size: 20px;
+}
+
+.description:nth-child(2) {
+    font-size: 15px;
+}
+
+/*CARRUSEL DE FOTOS*/
+
+.carrusel_trabajos {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-template-rows: 7vh;
+    grid-row: 3;
+}
+
+.carrusel_trabajos h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 0;
+
+}
+
+
+/* CARRUSEL */
+
+.carrusel_trabajos {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carrusel_imagenes {
+    display: flex;
+    overflow-y: auto;
+}
+
+.carrusel_imagenes img {
+    width: 100%;
+    object-fit: cover;
+    width: 12rem;
+    height: 12rem;
+    margin-right: 10px;
+}
+
+
+/* MEDIA QUERIES PAGINAS MOBILE */
+@media only screen and (max-width:400px) {
+
+    .description h2,
+    h3 {
+        font-size: 1rem;
+    }
 }
